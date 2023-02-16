@@ -12,12 +12,6 @@ public class ExplosionDissipate : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator DestructionCountdown()
     {
 

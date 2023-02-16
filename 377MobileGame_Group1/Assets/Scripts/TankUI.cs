@@ -16,8 +16,18 @@ public class TankUI : MonoBehaviour
     [SerializeField]
     private GameObject GolfBall;
     [SerializeField]
+    private GameObject PlatBall;
+    [SerializeField]
+    private GameObject Platform;
+    [SerializeField]
+    private GameObject WallBall;
+    [SerializeField]
+    private GameObject Wall;
+    [SerializeField]
     private GameObject Explosion;
-
+    [SerializeField]
+    private GameObject TeleportEffect;
+    [SerializeField]
     private GameObject CurrentBall;
     [SerializeField]
     private Transform ShootPoint;
@@ -41,10 +51,91 @@ public class TankUI : MonoBehaviour
     private GameObject FiringUI;
     [SerializeField]
     private GameObject BallUI;
+    [SerializeField]
+    private GameObject TeleportButton;
+    [SerializeField]
+    private GameObject ExplodeButton;
+    [SerializeField]
+    private GameObject PlatformButton;
+    [SerializeField]
+    private GameObject WallButton;
+    [SerializeField]
+    private GameObject ExplodeWarning;
+    [SerializeField]
+    private GameObject TeleportWarning;
+    [SerializeField]
+    private Text BallCounter;
+    private int Balls = 10;
+    [SerializeField]
+    private Text ShotCounter;
+    private int Shots;
+
+    [SerializeField]
+    private GameObject PauseMenu;
+
+    [SerializeField]
+    private bool speedachieved;
+
+    [SerializeField]
+    private int movementSpeed;
+
+    [SerializeField]
+    private Vector3 movement;
+
+    [SerializeField]
+    private int FuelLevel = 50;
+
+    [SerializeField]
+    private Text FuelTank;
+
+    [SerializeField]
+    private Scrollbar FuelGauge;
+
+    [SerializeField]
+    private int BallType = 1;
+    //Type 1=Normal
+    //Type 2=Platform
+    //Type 3=Wall
+
+    [SerializeField]
+    private GameObject SecretMenu;
 
     // Start is called before the first frame update
     void Start()
     {
+        movementSpeed = 1;
+        FuelLevel = 250;
+    }
+
+    private void FixedUpdate()
+    {
+        
+        
+        if (movement.x > 0 || movement.x < 0)  
+        {
+            Tank.transform.position += (movement * Time.deltaTime * movementSpeed);
+            FuelLevel--;
+            FuelTank.text = "Fuel: " + FuelLevel;
+            float FuelPercent = (FuelLevel / 250f);
+            FuelGauge.size = FuelPercent;
+            if (FuelLevel == 0) StopMovement();
+        }
+        if (CurrentBall != null)
+        {
+
+
+            if (!speedachieved)
+            {
+                speedachieved = false;
+            }
+            if (CurrentBall.GetComponent<Rigidbody>().IsSleeping())
+            {
+                TeleportButton.GetComponent<Button>().interactable = true;
+                TeleportWarning.SetActive(false);
+            }
+            //Debug.Log(CurrentBall.GetComponent<Rigidbody>().velocity);
+        }
+        
         
     }
 
@@ -56,6 +147,24 @@ public class TankUI : MonoBehaviour
     public void ResetStage()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void PauseGame()
+    {
+        if (PauseMenu.activeInHierarchy == false)
+        {
+            PauseMenu.SetActive(true);
+        }
+        else if (PauseMenu.activeInHierarchy == true)
+        {
+            PauseMenu.SetActive(false);
+        }
+
+    }
+
+    public void LevelFinished()
+    {
+        Debug.Log("Level Complete");
     }
 
     public void TurretLeft()
@@ -70,7 +179,7 @@ public class TankUI : MonoBehaviour
 
     public void TurretRight()
     {
-        if (CurrentTurretRotation > -90)
+        if (CurrentTurretRotation > -85)
         {
             CurrentTurretRotation = CurrentTurretRotation - 15f;
             TurretPivot.transform.rotation = Quaternion.Euler(0f, 0f, CurrentTurretRotation);
@@ -80,47 +189,158 @@ public class TankUI : MonoBehaviour
 
     public void FireBall()
     {
-        CurrentBall = GameObject.Instantiate(GolfBall, ShootPoint.position, TurretPivot.transform.rotation);
-        Debug.Log("TurretPivot: "+TurretPivot.transform.rotation);
+        //fires the ball
+        if (BallType == 1 || BallType == 0) CurrentBall = GameObject.Instantiate(GolfBall, ShootPoint.position, TurretPivot.transform.rotation);
+        if (BallType == 2) CurrentBall = GameObject.Instantiate(PlatBall, ShootPoint.position, TurretPivot.transform.rotation);
+        if (BallType == 3) CurrentBall = GameObject.Instantiate(WallBall, ShootPoint.position, TurretPivot.transform.rotation);
+
         XLevel = PowerBar.value;
 
         direction = transform.right * XLevel;
 
-        Debug.Log(direction);
-
         CurrentBall.GetComponent<Rigidbody>().AddForce(CurrentBall.transform.up * XLevel, ForceMode.Impulse);
-
+        TeleportButton.GetComponent<Button>().interactable = false;
+        TeleportWarning.SetActive(true);
         CameraTarget.GetComponent<BallChaser>().Follow(CurrentBall);
 
+        //Hide the movement UI and show Ball UI
         FiringUI.SetActive(false);
         BallUI.SetActive(true);
+        if (BallType == 1 || BallType == 0)
+        {
+            ExplodeButton.SetActive(true);
+            PlatformButton.SetActive(false);
+            WallButton.SetActive(false);
+        }
+        if (BallType == 2)
+        {
+            ExplodeButton.SetActive(false);
+            PlatformButton.SetActive(true);
+            WallButton.SetActive(false);
+        }
+        if (BallType == 3)
+        {
+            ExplodeButton.SetActive(false);
+            PlatformButton.SetActive(false);
+            WallButton.SetActive(true);
+        }
+
+        //Make tank stop moving if it is
+        movement = new Vector3(0f, 0f, 0f);
+
+        //Reset Fuel
+        FuelLevel = 250;
+        FuelTank.text = "Fuel: " + FuelLevel;
+        float FuelPercent = (FuelLevel / 250f);
+        FuelGauge.size = FuelPercent;
+
+        //Count the Shot
+        Shots++;
+        ShotCounter.text = "Strokes: " + Shots;
+
+        //figures out if you should be allowed to explode the ball
+        if (Balls < 2)
+        {
+            if (BallType == 1 || BallType == 0) ExplodeButton.GetComponent<Button>().interactable = false;
+            if (BallType == 2) PlatformButton.GetComponent<Button>().interactable = false;
+            if (BallType == 3) WallButton.GetComponent<Button>().interactable = false;
+            ExplodeWarning.SetActive(true);
+
+        }
     }
 
-    public void Explode()
+    public void Explode() //explodes ball and uses current effect
     {
-        Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
+        //detonates the ball
+        if (BallType == 1 || BallType == 0) Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
+        //spawns platform
+        if (BallType == 2) Instantiate(Platform, CurrentBall.transform.position, Tank.transform.rotation);
+        //spawns wall
+        if (BallType == 3) Instantiate(Wall, CurrentBall.transform.position, Quaternion.Euler(0f, 0f, 90f));
         Destroy(CurrentBall);
-
+        //removes a ball ammo from the counter
+        Balls--;
+        BallCounter.text = "Balls: " + Balls;
+        //allows player to aim again.
         FiringUI.SetActive(true);
         BallUI.SetActive(false);
+    }
+
+    public void NoEffect() //Explode Ball without using its effect
+    {
+        Destroy(CurrentBall);
+        //removes a ball ammo from the counter
+        Balls--;
+        BallCounter.text = "Balls: " + Balls;
+        //allows player to aim again.
+        FiringUI.SetActive(true);
+        BallUI.SetActive(false);
+        if (Balls == 0)
+        {
+            FiringUI.SetActive(false);
+            
+        }
     }
 
     public void Teleport()
     {
-        Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
-        Tank.transform.position = CurrentBall.transform.position + new Vector3(0, 3, 0);
-        
-
+        //does an effect for the teleport
+        Instantiate(TeleportEffect, CurrentBall.transform.position, CurrentBall.transform.rotation);
+        Tank.transform.position = CurrentBall.transform.position + new Vector3(0, 1, 0);
         Destroy(CurrentBall);
+        //allows player to aim again
         FiringUI.SetActive(true);
         BallUI.SetActive(false);
 
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MoveLeft()
     {
-        
+        if (FuelLevel > 0)
+        {
+            movement = new Vector3(-1f, 0f, 0f);
+        }
+
     }
+
+    public void MoveRight()
+    {
+        if (FuelLevel > 0)
+        {
+            movement = new Vector3(1f, 0f, 0f);
+        }
+
+    }
+
+    public void StopMovement()
+    {
+        movement = new Vector3(0f, 0f, 0f);
+    }
+
+    public void ToggleSecrets()
+    {
+        if (SecretMenu.activeInHierarchy == false)
+        {
+            SecretMenu.SetActive(true);
+        }
+        else if (SecretMenu.activeInHierarchy == true)
+        {
+            SecretMenu.SetActive(false);
+        }
+    }
+
+    public void InfiniteBalls()
+    {
+        Balls = 9999;
+        BallCounter.text = "Infinite Balls";
+    }
+
+    public void BallTypeSet(int num)
+    {
+        BallType = num;
+    }
+
+
+    
 }

@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class OutofBounds : MonoBehaviour
 {
+    private GameObject Tank;
+    private GameObject RespawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Tank = GameObject.Find("Tank");
+        RespawnPoint = GameObject.Find("RespawnPoint");
     }
 
-    // Update is called once per frame
-    void Update()
+    
+
+
+    private void OnTriggerEnter(Collider other)
     {
-
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-       
+        if (other.gameObject.tag == "Ball")
+        {
+            Tank.GetComponent<TankUI>().NoEffect();
+        }
+        if (other.gameObject == Tank)
+        {
+            Tank.transform.position = RespawnPoint.transform.position;
+            Tank.GetComponent<TankUI>().StopMovement();
+        }
     }
 }
