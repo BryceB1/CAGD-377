@@ -16,4 +16,13 @@ public class Sand : MonoBehaviour
             Ball.GetComponent<Rigidbody>().drag = 5f;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Ball")
+        {
+            Ball = other.gameObject;
+            Ball.GetComponent<Rigidbody>().drag = 0.6f;
+        }
+    }
 }

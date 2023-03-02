@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TankUI : MonoBehaviour
 {
+    [SerializeField] private int SceneNum;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject Tank;
     [SerializeField]
     private Slider PowerBar;
@@ -24,44 +25,46 @@ public class TankUI : MonoBehaviour
     [SerializeField]
     private GameObject Wall;
     [SerializeField]
+    private GameObject SpikeBall;
+    [SerializeField]
     private GameObject Explosion;
     [SerializeField]
     private GameObject TeleportEffect;
-    [SerializeField]
+    //[SerializeField]
     private GameObject CurrentBall;
     [SerializeField]
     private Transform ShootPoint;
-    [SerializeField]
+    //[SerializeField]
     private GameObject TurretPivot;
 
     private Vector3 direction;
 
-    [SerializeField]
+    //[SerializeField]
     private float YLevel;
 
-    [SerializeField]
+    //[SerializeField]
     private float XLevel;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject CameraTarget;
 
     private float CurrentTurretRotation = -40;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject FiringUI;
-    [SerializeField]
+    //[SerializeField]
     private GameObject BallUI;
-    [SerializeField]
+    //[SerializeField]
     private GameObject TeleportButton;
-    [SerializeField]
+    //[SerializeField]
     private GameObject ExplodeButton;
-    [SerializeField]
+    //[SerializeField]
     private GameObject PlatformButton;
-    [SerializeField]
+    //[SerializeField]
     private GameObject WallButton;
-    [SerializeField]
+    //[SerializeField]
     private GameObject ExplodeWarning;
-    [SerializeField]
+    //[SerializeField]
     private GameObject TeleportWarning;
     [SerializeField]
     private Text BallCounter;
@@ -70,10 +73,10 @@ public class TankUI : MonoBehaviour
     private Text ShotCounter;
     private int Shots;
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject PauseMenu;
 
-    [SerializeField]
+    //[SerializeField]
     private bool speedachieved;
 
     [SerializeField]
@@ -82,8 +85,10 @@ public class TankUI : MonoBehaviour
     [SerializeField]
     private Vector3 movement;
 
-    [SerializeField]
+    //[SerializeField]
     private int FuelLevel = 50;
+    [SerializeField]
+    private float FuelMax = 250;
 
     [SerializeField]
     private Text FuelTank;
@@ -91,20 +96,56 @@ public class TankUI : MonoBehaviour
     [SerializeField]
     private Scrollbar FuelGauge;
 
-    [SerializeField]
+    //[SerializeField]
     private int BallType = 1;
     //Type 1=Normal
     //Type 2=Platform
     //Type 3=Wall
+    //Type 4= Dud/Spiky
 
-    [SerializeField]
+    //[SerializeField]
     private GameObject SecretMenu;
+
+
+    private void Awake()
+    {
+        FiringUI = GameObject.Find("Movement UI");
+        BallUI = GameObject.Find("BallUI");
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         movementSpeed = 1;
         FuelLevel = 250;
+
+
+        Tank = this.gameObject;
+        //PowerBar = GameObject.Find("Slider Power");
+        TurretPivot = GameObject.Find("Turret Pivot");
+        CameraTarget = GameObject.Find("Camera Target");
+
+        
+        
+
+        TeleportButton = GameObject.Find("Teleport");
+        ExplodeButton = GameObject.Find("Explode");
+        PlatformButton = GameObject.Find("Platform");
+        WallButton = GameObject.Find("WallButton");
+
+
+        ExplodeWarning = GameObject.Find("Explode Notice");
+        TeleportWarning = GameObject.Find("Teleport Notice");
+        ExplodeWarning.SetActive(false);
+        TeleportWarning.SetActive(false);
+
+        PauseMenu = GameObject.Find("PauseMenu");
+        PauseMenu.SetActive(false);
+
+        SecretMenu = GameObject.Find("SecretMenu");
+        SecretMenu.SetActive(false);
+
+        BallUI.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -116,7 +157,7 @@ public class TankUI : MonoBehaviour
             Tank.transform.position += (movement * Time.deltaTime * movementSpeed);
             FuelLevel--;
             FuelTank.text = "Fuel: " + FuelLevel;
-            float FuelPercent = (FuelLevel / 250f);
+            float FuelPercent = (FuelLevel / FuelMax);
             FuelGauge.size = FuelPercent;
             if (FuelLevel == 0) StopMovement();
         }
@@ -146,7 +187,7 @@ public class TankUI : MonoBehaviour
 
     public void ResetStage()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneNum);
     }
 
     public void PauseGame()
@@ -165,6 +206,7 @@ public class TankUI : MonoBehaviour
     public void LevelFinished()
     {
         Debug.Log("Level Complete");
+        SceneManager.LoadScene(SceneNum + 1);
     }
 
     public void TurretLeft()
@@ -193,6 +235,7 @@ public class TankUI : MonoBehaviour
         if (BallType == 1 || BallType == 0) CurrentBall = GameObject.Instantiate(GolfBall, ShootPoint.position, TurretPivot.transform.rotation);
         if (BallType == 2) CurrentBall = GameObject.Instantiate(PlatBall, ShootPoint.position, TurretPivot.transform.rotation);
         if (BallType == 3) CurrentBall = GameObject.Instantiate(WallBall, ShootPoint.position, TurretPivot.transform.rotation);
+        if (BallType == 4) CurrentBall = GameObject.Instantiate(SpikeBall, ShootPoint.position, TurretPivot.transform.rotation);
 
         XLevel = PowerBar.value;
 
@@ -224,14 +267,20 @@ public class TankUI : MonoBehaviour
             PlatformButton.SetActive(false);
             WallButton.SetActive(true);
         }
+        if (BallType == 4)
+        {
+            ExplodeButton.SetActive(true);
+            PlatformButton.SetActive(false);
+            WallButton.SetActive(false);
+        }
 
         //Make tank stop moving if it is
         movement = new Vector3(0f, 0f, 0f);
 
         //Reset Fuel
-        FuelLevel = 250;
+        FuelLevel = (int)FuelMax;
         FuelTank.text = "Fuel: " + FuelLevel;
-        float FuelPercent = (FuelLevel / 250f);
+        float FuelPercent = (FuelLevel / FuelMax);
         FuelGauge.size = FuelPercent;
 
         //Count the Shot
@@ -244,6 +293,7 @@ public class TankUI : MonoBehaviour
             if (BallType == 1 || BallType == 0) ExplodeButton.GetComponent<Button>().interactable = false;
             if (BallType == 2) PlatformButton.GetComponent<Button>().interactable = false;
             if (BallType == 3) WallButton.GetComponent<Button>().interactable = false;
+            if (BallType == 4) ExplodeButton.GetComponent<Button>().interactable = false;
             ExplodeWarning.SetActive(true);
 
         }
@@ -257,6 +307,8 @@ public class TankUI : MonoBehaviour
         if (BallType == 2) Instantiate(Platform, CurrentBall.transform.position, Tank.transform.rotation);
         //spawns wall
         if (BallType == 3) Instantiate(Wall, CurrentBall.transform.position, Quaternion.Euler(0f, 0f, 90f));
+        //explodes spike ball
+        if (BallType == 4) Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
         Destroy(CurrentBall);
         //removes a ball ammo from the counter
         Balls--;
@@ -278,8 +330,13 @@ public class TankUI : MonoBehaviour
         if (Balls == 0)
         {
             FiringUI.SetActive(false);
-            
+            StageLost();
         }
+    }
+
+    public void StageLost()
+    {
+        Debug.Log("Stage lost, idiot!");
     }
 
     public void Teleport()
@@ -317,6 +374,19 @@ public class TankUI : MonoBehaviour
     {
         movement = new Vector3(0f, 0f, 0f);
     }
+
+    public void ToggleFiringUI()
+    {
+        if (FiringUI.activeInHierarchy == false)
+        {
+            FiringUI.SetActive(true);
+        }
+        else if (FiringUI.activeInHierarchy == true)
+        {
+            FiringUI.SetActive(false);
+        }
+    }
+
 
     public void ToggleSecrets()
     {

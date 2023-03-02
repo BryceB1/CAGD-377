@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GolfHole : MonoBehaviour
 {
+
     private GameObject Ball;
     private GameObject Tank;
 
