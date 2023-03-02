@@ -4743,8 +4743,8 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531272512}
-  m_Text: "Ahead lies a fan which will push \nthe ball if it is caught in the path\n
-    of the fan."
+  m_Text: "Ahead lies a fan which will push \nthe ball if it is caught in the path\nof
+    the fan."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -20272,6 +20272,10 @@ PrefabInstance:
     - target: {fileID: 896545817526517708, guid: e82be4c1f1803ba43a11c51af3a70626, type: 3}
       propertyPath: m_Name
       value: Explode
+      objectReference: {fileID: 0}
+    - target: {fileID: 896545817526517708, guid: e82be4c1f1803ba43a11c51af3a70626, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 896545817526517709, guid: e82be4c1f1803ba43a11c51af3a70626, type: 3}
       propertyPath: m_IsTrigger
