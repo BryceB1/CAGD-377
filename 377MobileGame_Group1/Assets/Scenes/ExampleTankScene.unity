@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1604,8 +1604,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4924346b2c9f55d479fc38f33212b0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentBall: {fileID: 0}
   Tank: {fileID: 2015643624}
+  LevelPreview: 0
+  HolePoint: {fileID: 0}
+  TankPoint: {fileID: 0}
+  Buffer1: {fileID: 0}
+  Buffer2: {fileID: 0}
+  timeDuration: 3
 --- !u!1 &659643183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,18 +3707,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105db277406e75148b0c22dd220b662e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tank: {fileID: 2015643624}
+  SceneNum: 0
   PowerBar: {fileID: 659643185}
   PowerText: {fileID: 1463858027}
   GolfBall: {fileID: 1929151246}
+  PlatBall: {fileID: 0}
+  Platform: {fileID: 0}
+  WallBall: {fileID: 0}
+  Wall: {fileID: 0}
+  SpikeBall: {fileID: 0}
   Explosion: {fileID: 896545817526517708, guid: e82be4c1f1803ba43a11c51af3a70626, type: 3}
+  TeleportEffect: {fileID: 0}
   ShootPoint: {fileID: 236482367}
-  TurretPivot: {fileID: 60936796}
-  YLevel: 3
-  XLevel: 0
-  CameraTarget: {fileID: 649334099}
-  FiringUI: {fileID: 370538661}
-  BallUI: {fileID: 892991352}
+  BallCounter: {fileID: 0}
+  ShotCounter: {fileID: 0}
+  movementSpeed: 0
+  movement: {x: 0, y: 0, z: 0}
+  FuelMax: 250
+  FuelTank: {fileID: 0}
+  FuelGauge: {fileID: 0}
 --- !u!54 &2015643630
 Rigidbody:
   m_ObjectHideFlags: 0
