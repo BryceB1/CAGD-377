@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 142
+  controlID: 107
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 73
+  controlID: 38
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 74
+  controlID: 39
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -398,9 +398,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 7ef9ffff6cfbffff
+      m_SelectedIDs: e8d1ffff
+      m_LastClickedID: -11800
+      m_ExpandedIDs: ead1ffff38faffff6cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 428.72748, y: 194.65356, z: 342.3937}
+    m_Target: {x: 461.2, y: 15.900001, z: 38.5}
     speed: 2
-    m_Value: {x: 428.72748, y: 194.65356, z: 342.3937}
+    m_Value: {x: 15, y: 15, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -509,13 +509,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.025190923, y: -0.0027165902, z: -0.00001938602, w: -0.9998156}
+    m_Target: {x: -0.3198941, y: -0.03517377, z: 0.01214756, w: -0.94688267}
     speed: 2
-    m_Value: {x: 0.026686976, y: -0.0027161874, z: -0.000023459907, w: -0.9996402}
+    m_Value: {x: -0.31984553, y: -0.035168428, z: 0.012145715, w: -0.9467389}
   m_Size:
-    m_Target: 487.21826
+    m_Target: 35.17812
     speed: 2
-    m_Value: 466.23758
+    m_Value: 35.17812
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -578,22 +578,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Troll Emperor\Documents\GitHub\CAGD-377\377MobileGame_Group1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a4430000
-    m_LastClickedID: 17316
-    m_ExpandedIDs: 0000000096430000
+    m_SelectedIDs: a83e0000
+    m_LastClickedID: 16040
+    m_ExpandedIDs: 000000009c3e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -621,7 +621,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000096430000
+    m_ExpandedIDs: 000000009c3e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -673,7 +673,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 0.2000122}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
