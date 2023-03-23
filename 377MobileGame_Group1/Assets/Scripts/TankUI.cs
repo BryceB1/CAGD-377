@@ -47,13 +47,14 @@ public class TankUI : MonoBehaviour
 
     //[SerializeField]
     private GameObject CameraTarget;
-
+    [SerializeField]
     private float CurrentTurretRotation = -40;
 
     //[SerializeField]
     private GameObject FiringUI;
     //[SerializeField]
     private GameObject BallUI;
+    private GameObject GameOverUI;
     //[SerializeField]
     private GameObject TeleportButton;
     //[SerializeField]
@@ -106,11 +107,14 @@ public class TankUI : MonoBehaviour
     //[SerializeField]
     private GameObject SecretMenu;
 
+    [SerializeField]
+    private GameObject levelData;
 
     private void Awake()
     {
         FiringUI = GameObject.Find("Movement UI");
         BallUI = GameObject.Find("BallUI");
+        GameOverUI = GameObject.Find("GameOverUI");
     }
 
     // Start is called before the first frame update
@@ -125,8 +129,6 @@ public class TankUI : MonoBehaviour
         TurretPivot = GameObject.Find("Turret Pivot");
         CameraTarget = GameObject.Find("Camera Target");
 
-        
-        
 
         TeleportButton = GameObject.Find("Teleport");
         ExplodeButton = GameObject.Find("Explode");
@@ -146,6 +148,8 @@ public class TankUI : MonoBehaviour
         SecretMenu.SetActive(false);
 
         BallUI.SetActive(false);
+        GameOverUI.SetActive(false);
+
     }
 
     private void FixedUpdate()
@@ -205,8 +209,21 @@ public class TankUI : MonoBehaviour
 
     public void LevelFinished()
     {
-        Debug.Log("Level Complete");
+        //SceneManager.LoadScene(SceneNum + 1);
+        levelData.GetComponent<LevelData>().shots = Shots;
+        levelData.GetComponent<LevelData>().LevelFinished();
+        FiringUI.SetActive(false);
+        BallUI.SetActive(false);
+    }
+
+    public void NextStage()
+    {
         SceneManager.LoadScene(SceneNum + 1);
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void TurretLeft()
@@ -337,6 +354,7 @@ public class TankUI : MonoBehaviour
     public void StageLost()
     {
         Debug.Log("Stage lost, idiot!");
+        GameOverUI.SetActive(true);
     }
 
     public void Teleport()

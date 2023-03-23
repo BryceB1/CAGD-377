@@ -13,7 +13,7 @@ public class BallChaser : MonoBehaviour
 
     [SerializeField] private GameObject HolePoint, TankPoint, Buffer1, Buffer2;
 
-
+    
 
     private int PreviewSteps = 0;
 
@@ -22,8 +22,24 @@ public class BallChaser : MonoBehaviour
     private float timeStart;
     [SerializeField] private float timeDuration = 3.0f;
 
+    private void Awake()
+    {
+        //PreviewStage();
+    }
+
     // Start is called before the first frame update
-    void Start()
+    void Reset()
+    {
+
+        PreviewStage();
+    }
+
+    private void OnEnable()
+    {
+        PreviewStage();
+    }
+
+    public void ActivateLevel()
     {
         PreviewStage();
         Tank.GetComponent<TankUI>().ToggleFiringUI();
@@ -39,6 +55,7 @@ public class BallChaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (LevelPreview == true)
         {
             float u = (Time.time - timeStart) / timeDuration;
