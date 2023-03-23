@@ -1348,17 +1348,21 @@ IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2272[1];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2273[3];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2275[2];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2276[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2277[4];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2278[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2279[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2280[42];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2281[3];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2283[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2284[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2285[2];
-IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2286[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2277[18];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2278[21];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2279[18];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2280[4];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2281[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2282[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2284[44];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2285[3];
 IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2287[2];
-IL2CPP_EXTERN_C_CONST int32_t* g_FieldOffsetTable[2288] = 
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2288[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2289[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2290[2];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2291[1];
+IL2CPP_EXTERN_C_CONST int32_t g_FieldOffsetTable2292[2];
+IL2CPP_EXTERN_C_CONST int32_t* g_FieldOffsetTable[2293] = 
 {
 	NULL,
 	NULL,
@@ -3642,10 +3646,15 @@ IL2CPP_EXTERN_C_CONST int32_t* g_FieldOffsetTable[2288] =
 	g_FieldOffsetTable2279,
 	g_FieldOffsetTable2280,
 	g_FieldOffsetTable2281,
+	g_FieldOffsetTable2282,
 	NULL,
-	g_FieldOffsetTable2283,
 	g_FieldOffsetTable2284,
 	g_FieldOffsetTable2285,
-	g_FieldOffsetTable2286,
+	NULL,
 	g_FieldOffsetTable2287,
+	g_FieldOffsetTable2288,
+	g_FieldOffsetTable2289,
+	g_FieldOffsetTable2290,
+	g_FieldOffsetTable2291,
+	g_FieldOffsetTable2292,
 };
