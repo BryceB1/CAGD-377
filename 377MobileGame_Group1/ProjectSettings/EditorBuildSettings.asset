@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: 02bcc5c69cf2ed447a5fb8f72d5a496b
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 4ebd199784aad024c8962df5a69d9095
+    guid: 8fdd0259e21ee024ab4cb4fbb64a1baa
   - enabled: 0
     path: Assets/Scenes/LevelX-1.unity
     guid: a737a4ee03e3ef840b4e903ca1c0e3f6

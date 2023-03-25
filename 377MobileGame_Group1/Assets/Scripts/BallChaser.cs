@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallChaser : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class BallChaser : MonoBehaviour
 
     [SerializeField] private GameObject HolePoint, TankPoint, Buffer1, Buffer2;
 
-    
+
 
     private int PreviewSteps = 0;
 
@@ -22,40 +23,39 @@ public class BallChaser : MonoBehaviour
     private float timeStart;
     [SerializeField] private float timeDuration = 3.0f;
 
-    private void Awake()
-    {
-        //PreviewStage();
-    }
-
-    // Start is called before the first frame update
-    void Reset()
-    {
-
-        PreviewStage();
-    }
-
     private void OnEnable()
     {
-        PreviewStage();
+        SceneManager.activeSceneChanged += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene,Scene scene2)
+    {
+       PreviewStage();
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= OnSceneLoaded;
     }
 
     public void ActivateLevel()
     {
         PreviewStage();
-        Tank.GetComponent<TankUI>().ToggleFiringUI();
     }
 
     private void PreviewStage()
     {
-        if (Buffer1!=null) PreviewSteps = 1;
+        Debug.Log("Stage Previewing");
+        Tank.GetComponent<TankUI>().ToggleFiringUI();
+        if (Buffer1!=null) PreviewSteps = 3;
         if (Buffer2!=null) PreviewSteps = 4;
         LevelPreview = true;
+        timeStart = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (LevelPreview == true)
         {
             float u = (Time.time - timeStart) / timeDuration;
@@ -68,14 +68,17 @@ public class BallChaser : MonoBehaviour
 
             //standard linear interpolation formula
             p01 = (1 - u) * HolePoint.transform.position + u * TankPoint.transform.position;
+            if (PreviewSteps < 3)
+            {
+                transform.position = p01;
+            }
 
-            transform.position = p01;
 
             Vector3 p12, p23, p012, p123, p0123;
             if (PreviewSteps == 3)
             {
                 p01 = (1 - u) * HolePoint.transform.position + u * Buffer1.transform.position;
-                p12 = (1 - u) * Buffer1.transform.position + u * Buffer2.transform.position;
+                p12 = (1 - u) * Buffer1.transform.position + u * Tank.transform.position;
                 p012 = (1 - u) * p01 + u * p12;
                 transform.position = p012;
             }

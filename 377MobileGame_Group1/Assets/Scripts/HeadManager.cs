@@ -12,8 +12,8 @@ public class HeadManager : MonoBehaviour
 
     [SerializeField]
     private List<ScriptableObject> LevelDatas;
-    [SerializeField]
-    private GameObject CameraTarget;
+
+    //private GameObject CameraTarget;
 
     private void Awake()
     {
@@ -28,31 +28,11 @@ public class HeadManager : MonoBehaviour
         }
         DontDestroyOnLoad(this);
 
-       
-    }
-
-    private void Update()
-    {
-        if (CameraTarget == null)
-        {
-            Start();
-        }
-        //if (CameraTarget.activeInHierarchy == true && CameraTarget.GetComponent<BallChaser>().LevelPreview == false)
+        //CameraTarget = GameObject.Find("Camera Target");
+        //if (CameraTarget != null)
         //{
-        //    CameraTarget.SetActive(false);
-        //    CameraTarget.SetActive(true);
+        //    CameraTarget.GetComponent<BallChaser>().ActivateLevel();
         //}
-       
-    }
-
-    private void Start()
-    {
-        
-        CameraTarget = GameObject.Find("Camera Target");
-        if (CameraTarget != null)
-        {
-            CameraTarget.GetComponent<BallChaser>().ActivateLevel();
-        }
     }
 
 

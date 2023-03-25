@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   par: 7
   shots: 0
-  LevelID: 111
+  LevelID: 333
   LevelName: Trial Run
   HighScore: 0
   StarScore1: 6000
@@ -2681,7 +2681,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2015643629}
         m_TargetAssemblyTypeName: TankUI, Assembly-CSharp
-        m_MethodName: NextStage
+        m_MethodName: LevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31027,7 +31027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105db277406e75148b0c22dd220b662e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 2
+  SceneNum: 4
   PowerBar: {fileID: 791743998}
   PowerText: {fileID: 932922522}
   GolfBall: {fileID: 2414446482693500962, guid: 6380cab3f0ceca043ab4512f6d8c7935, type: 3}

@@ -117,8 +117,9 @@ public class LevelData : MonoBehaviour
         if (score > HighScore)
         {
             HighScore = score;
-           
-            //HeadManager.Instance.AddScore(this);
+            //DataCourier.HighScore = HighScore;
+            //DataCourier.ReportToManager();
+            HeadManager.Instance.AddScore(this);
         }
 
 

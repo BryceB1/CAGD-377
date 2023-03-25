@@ -22,7 +22,6 @@ public class LevelSelectManager : MonoBehaviour
 
     private void Start()
     {
-
         Level1Highscore = HeadManager.Instance.Level1HiScore;
         Level2Highscore = HeadManager.Instance.Level2HiScore;
         Level3Highscore = HeadManager.Instance.Level3HiScore;
