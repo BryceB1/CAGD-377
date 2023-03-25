@@ -82,6 +82,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1714}
     - Class: 114
+      Script: {instanceID: 2042}
+    - Class: 114
       Script: {instanceID: 2086}
     - Class: 114
       Script: {instanceID: 2182}
@@ -109,6 +111,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2954}
     - Class: 114
       Script: {instanceID: 3478}
+    - Class: 114
+      Script: {instanceID: 3504}
     - Class: 114
       Script: {instanceID: 4336}
     - Class: 114
@@ -920,7 +924,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 2d73d96224f94a101f9d93acc4d35acb
+      Hash: 041b931ca4e2c0ef2b5e219e4f0e36d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HeadManager
