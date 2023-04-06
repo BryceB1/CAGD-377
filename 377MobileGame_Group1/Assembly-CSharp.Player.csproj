@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallChaser.cs" />
     <Compile Include="Assets\Scripts\TextPurge4.cs" />
+    <Compile Include="Assets\Scripts\UIWiggle.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\OutofBounds.cs" />
     <Compile Include="Assets\Scripts\TankUI.cs" />
@@ -62,9 +63,13 @@
     <Compile Include="Assets\Scripts\TextPurger3.cs" />
     <Compile Include="Assets\Scripts\tutorial text.cs" />
     <Compile Include="Assets\Scripts\Sand.cs" />
+    <Compile Include="Assets\Scripts\StarUpProcess.cs" />
+    <Compile Include="Assets\Scripts\LevelData.cs" />
     <Compile Include="Assets\Scripts\TextPurgeScript1.cs" />
+    <Compile Include="Assets\Scripts\HeadManager.cs" />
     <Compile Include="Assets\Scripts\ExplosionDissipate.cs" />
     <Compile Include="Assets\Scripts\TextPurger2.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectManager.cs" />
     <Compile Include="Assets\Scripts\GolfHole.cs" />
     <Compile Include="Assets\Scripts\FanPush.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
