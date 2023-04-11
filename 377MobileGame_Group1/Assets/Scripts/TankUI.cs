@@ -110,11 +110,18 @@ public class TankUI : MonoBehaviour
     [SerializeField]
     private GameObject levelData;
 
+    public string LevelName;
+
+    private bool ScreenShakeOn = true;
+    [SerializeField]
+    private Camera MainCamera;
+
     private void Awake()
     {
         FiringUI = GameObject.Find("Movement UI");
         BallUI = GameObject.Find("BallUI");
         GameOverUI = GameObject.Find("GameOverUI");
+        LevelName = levelData.GetComponent<LevelData>().LevelName;
     }
 
     // Start is called before the first frame update
@@ -122,7 +129,6 @@ public class TankUI : MonoBehaviour
     {
         movementSpeed = 1;
         FuelLevel = 250;
-
 
         Tank = this.gameObject;
         //PowerBar = GameObject.Find("Slider Power");
@@ -150,6 +156,7 @@ public class TankUI : MonoBehaviour
         BallUI.SetActive(false);
         GameOverUI.SetActive(false);
 
+        MainCamera = GameObject.FindObjectOfType<Camera>();
     }
 
     private void FixedUpdate()
@@ -248,6 +255,7 @@ public class TankUI : MonoBehaviour
 
     public void FireBall()
     {
+        MainCamera.GetComponent<CameraMover>().Nudging = false;
         //fires the ball
         if (BallType == 1 || BallType == 0) CurrentBall = GameObject.Instantiate(GolfBall, ShootPoint.position, TurretPivot.transform.rotation);
         if (BallType == 2) CurrentBall = GameObject.Instantiate(PlatBall, ShootPoint.position, TurretPivot.transform.rotation);
@@ -327,12 +335,30 @@ public class TankUI : MonoBehaviour
         //explodes spike ball
         if (BallType == 4) Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
         Destroy(CurrentBall);
+        if (BallType == 1 || BallType == 4 && ScreenShakeOn) 
+        {
+            StartCoroutine(ScreenShake());
+        }
         //removes a ball ammo from the counter
         Balls--;
         BallCounter.text = "Balls: " + Balls;
         //allows player to aim again.
         FiringUI.SetActive(true);
         BallUI.SetActive(false);
+    }
+
+    IEnumerator ScreenShake()
+    {
+        float duration = 0.5f;
+        Vector3 startPosition = transform.position;
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            CameraTarget.transform.position = startPosition + Random.insideUnitSphere;
+            yield return null;
+        }
+        //transform.position = startPosition;
     }
 
     public void NoEffect() //Explode Ball without using its effect
@@ -429,6 +455,15 @@ public class TankUI : MonoBehaviour
         BallType = num;
     }
 
+    public void GainBall(int ballgain)
+    {
+        Balls += ballgain;
+        BallCounter.text = "Balls: " + Balls;
+    }
 
-    
+    public void LoseStrokes(int strokelost)
+    {
+        Shots -= strokelost;
+        ShotCounter.text = "Strokes: " + Shots;
+    }
 }

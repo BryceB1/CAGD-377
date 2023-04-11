@@ -20,12 +20,27 @@ public class OutofBounds : MonoBehaviour
     {
         if (other.gameObject.tag == "Ball")
         {
-            Tank.GetComponent<TankUI>().NoEffect();
+            if (Tank.GetComponent<TankUI>() != null)
+            {
+                Tank.GetComponent<TankUI>().NoEffect();
+            }
+            else
+            {
+                Tank.GetComponent<MilitaryTankUI>().NoEffect();
+            }
+
         }
         if (other.gameObject == Tank)
         {
             Tank.transform.position = RespawnPoint.transform.position;
-            Tank.GetComponent<TankUI>().StopMovement();
+            if (Tank.GetComponent<TankUI>() != null)
+            {
+                Tank.GetComponent<TankUI>().StopMovement();
+            }
+            else
+            {
+                Tank.GetComponent<MilitaryTankUI>().NoEffect();
+            }
         }
     }
 }

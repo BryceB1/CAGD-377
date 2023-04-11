@@ -32,13 +32,13 @@ public class LevelData : MonoBehaviour
 
     public void Start()
     {
-        if (LevelID == 111)
-        {
-            if (HighScore < HeadManager.Instance.Level1HiScore)
-            {
-                HighScore = HeadManager.Instance.Level1HiScore;
-            }
-        }
+        //if (LevelID == 111)
+        //{
+        //    if (HighScore < HeadManager.Instance.Level1HiScore)
+        //    {
+        //        HighScore = HeadManager.Instance.Level1HiScore;
+        //    }
+        //}
         
     }
 
@@ -147,7 +147,7 @@ public class LevelData : MonoBehaviour
     private void HoleInOne()
     {
         ScoreName = "Hole in One";
-        score = 99950;
+        score += 10000;
         ScoreNameText.text = ScoreName;
     }
 

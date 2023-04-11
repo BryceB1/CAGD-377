@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BallChaser : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class BallChaser : MonoBehaviour
 
     public bool LevelPreview;
 
+    public bool FollowingBall;
+
     [SerializeField] private GameObject HolePoint, TankPoint, Buffer1, Buffer2;
 
-
+    private string LevelName;
 
     private int PreviewSteps = 0;
 
@@ -22,6 +25,14 @@ public class BallChaser : MonoBehaviour
 
     private float timeStart;
     [SerializeField] private float timeDuration = 3.0f;
+
+    //public string Levelname;
+    [SerializeField]
+    private Text LevelTitle;
+    private GameObject LevelTitleObject;
+    private Color c01;
+    private Color c12;
+    private Color c012;
 
     private void OnEnable()
     {
@@ -31,6 +42,7 @@ public class BallChaser : MonoBehaviour
     void OnSceneLoaded(Scene scene,Scene scene2)
     {
        PreviewStage();
+        
     }
 
     private void OnDisable()
@@ -41,16 +53,36 @@ public class BallChaser : MonoBehaviour
     public void ActivateLevel()
     {
         PreviewStage();
+        
     }
 
     private void PreviewStage()
     {
-        Debug.Log("Stage Previewing");
-        Tank.GetComponent<TankUI>().ToggleFiringUI();
+        //Debug.Log("Stage Previewing");
+
+        if (Tank.GetComponent<TankUI>()== null)
+        {
+            Tank.GetComponent<MilitaryTankUI>().ToggleFiringUI();
+        }
+        else
+        {
+            Tank.GetComponent<TankUI>().ToggleFiringUI();
+        }
         if (Buffer1!=null) PreviewSteps = 3;
         if (Buffer2!=null) PreviewSteps = 4;
         LevelPreview = true;
         timeStart = Time.time;
+        if (Tank.GetComponent<TankUI>()== null)
+        {
+            LevelName = Tank.GetComponent<MilitaryTankUI>().LevelName;
+        }
+        else
+        {
+            LevelName = Tank.GetComponent<TankUI>().LevelName;
+        }
+        LevelTitle.text = LevelName;
+        LevelTitleObject = LevelTitle.gameObject;
+        LevelTitleObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -63,11 +95,25 @@ public class BallChaser : MonoBehaviour
             {
                 u = 1;
                 LevelPreview = false;
-                Tank.GetComponent<TankUI>().ToggleFiringUI();
+                if (Tank.GetComponent<TankUI>() == null)
+                {
+                    Tank.GetComponent<MilitaryTankUI>().ToggleFiringUI();
+                }
+                else
+                {
+                    Tank.GetComponent<TankUI>().ToggleFiringUI();
+                }
+                LevelTitleObject.SetActive(false);
             }
+            
+            c01 = (1 - u) * new Color(0, 0, 0, 0) + u * new Color(0, 0, 0, 2);
+            c12 = (1 - u) * new Color(0, 0, 0, 2) + u * new Color(0, 0, 0, 0);
+            c012 = (1 - u) * c01 + u * c12;
+            LevelTitle.GetComponent<Text>().color = c012;
 
             //standard linear interpolation formula
             p01 = (1 - u) * HolePoint.transform.position + u * TankPoint.transform.position;
+
             if (PreviewSteps < 3)
             {
                 transform.position = p01;
@@ -102,13 +148,14 @@ public class BallChaser : MonoBehaviour
         }
         else
         {
-            if (CurrentBall != null)
+            if (CurrentBall != null) 
             {
                 this.transform.position = CurrentBall.transform.position;
             }
             else
             {
                 this.transform.position = Tank.transform.position;
+                FollowingBall = false;
             }
         }
         
@@ -117,7 +164,7 @@ public class BallChaser : MonoBehaviour
     public void Follow(GameObject BallShot)
     {
         CurrentBall = BallShot;
-
+        FollowingBall = true;
 
     }
 

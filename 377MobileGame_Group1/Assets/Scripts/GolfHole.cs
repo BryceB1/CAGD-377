@@ -19,7 +19,15 @@ public class GolfHole : MonoBehaviour
         if (other.gameObject.tag == "Ball")
         {
             Ball = other.gameObject;
-            Tank.GetComponent<TankUI>().LevelFinished();
+            if (Tank.GetComponent<TankUI>() == null)
+            {
+                Tank.GetComponent<MilitaryTankUI>().LevelFinished();
+            }
+            else
+            {
+                Tank.GetComponent<TankUI>().LevelFinished();
+            }
+
         }
     }
 }
