@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 144
+  controlID: 74
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -400,7 +400,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cfbffff
+      m_ExpandedIDs: e8b1ffff0eeeffff46efffff6cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.00089261495, y: 0, z: 0}
+    m_Target: {x: 114.639946, y: 42.960835, z: 42.91}
     speed: 2
-    m_Value: {x: 0.00089261495, y: 0, z: 0}
+    m_Value: {x: 113.64438, y: 43.59397, z: 45.66}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -509,13 +509,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.13530003, y: -0.34652323, z: 0.04300349, w: 0.9278175}
+    m_Target: {x: 0.13810046, y: 0.805688, z: -0.22305548, w: 0.53212464}
     speed: 2
-    m_Value: {x: 0.13516246, y: -0.347727, z: 0.043183096, w: 0.92679673}
+    m_Value: {x: 0.13802351, y: 0.8052391, z: -0.22293119, w: 0.5318281}
   m_Size:
-    m_Target: 0.047283866
+    m_Target: 6.5760903
     speed: 2
-    m_Value: 0.04524772
+    m_Value: 6.8469954
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -578,21 +578,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models
+    - Assets/Prefabs/PlaceholderObstacles
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 70
   m_LastFolders:
-  - Assets/Models
+  - Assets/Prefabs/PlaceholderObstacles
   m_LastFoldersGridSize: 70
   m_LastProjectPath: C:\Users\Troll Emperor\Documents\GitHub\CAGD-377\377MobileGame_Group1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ba490000
-    m_LastClickedID: 18874
+    m_SelectedIDs: f0490000
+    m_LastClickedID: 18928
     m_ExpandedIDs: 00000000ba490000bc490000be490000c0490000c2490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -673,7 +673,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 29.503479}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 70
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
