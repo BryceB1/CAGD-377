@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 471}
   m_MaxSize: {x: 14001, y: 14021}
   vertical: 0
-  controlID: 1530
+  controlID: 144
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 1531
+  controlID: 99
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 1532
+  controlID: 74
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 590.8}
+      scrollPos: {x: 0, y: 1358.8}
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 6cfbffff48440000
@@ -307,9 +307,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 78.03501, y: 42.215427, z: -55.364254}
+    m_Target: {x: 445.78497, y: 232.0361, z: 38.251266}
     speed: 2
-    m_Value: {x: 78.03501, y: 42.215427, z: -55.364254}
+    m_Value: {x: 445.78497, y: 232.0361, z: 38.251266}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -356,13 +356,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.20032057, y: -0.65558416, z: 0.17814943, w: 0.7066509}
+    m_Target: {x: 0.13680525, y: 0.44805655, z: -0.07652611, w: 0.8807437}
     speed: 2
-    m_Value: {x: 0.20021932, y: -0.6552528, z: 0.17805938, w: 0.70629376}
+    m_Value: {x: 0.13673444, y: 0.44782466, z: -0.076486506, w: 0.8802878}
   m_Size:
-    m_Target: 337.92093
+    m_Target: 30.24929
     speed: 2
-    m_Value: 337.92093
+    m_Value: 30.24929
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -454,21 +454,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 70
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: 70
   m_LastProjectPath: C:\Users\Troll Emperor\Documents\GitHub\CAGD-377\377MobileGame_Group1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e490000
-    m_LastClickedID: 18718
+    m_SelectedIDs: ea480000
+    m_LastClickedID: 18666
     m_ExpandedIDs: 00000000e2480000e4480000e6480000e8480000ea480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000344e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -686,8 +686,8 @@ MonoBehaviour:
     y: 0
     width: 338.40002
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
