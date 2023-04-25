@@ -38,7 +38,7 @@ public class CameraNudge : MonoBehaviour
         //checks for mouse click
         //moves camera towards the direction you drag
 
-        if (Input.GetMouseButtonDown(0) && Input.mousePosition.y > 150 && !CameraTarget.GetComponent<BallChaser>().FollowingBall)   
+        if (Input.GetMouseButtonDown(0) && Input.mousePosition.y > 300)   
         {
             //Debug.Log(Input.mousePosition.y);
             CameraPoint = SceneCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -53,10 +53,9 @@ public class CameraNudge : MonoBehaviour
                 {
                     Tank.GetComponent<TankUI>().ToggleFiringUI();
                 }
-                Movable = true;
             }
            
-
+            Movable = true;
         }
 
         if (Input.GetMouseButton(0) && Movable)  

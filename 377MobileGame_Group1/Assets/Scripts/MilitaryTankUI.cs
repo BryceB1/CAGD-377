@@ -115,6 +115,10 @@ public class MilitaryTankUI : MonoBehaviour
 
     private bool ScreenShakeOn = true;
 
+    private int WindPower;
+
+    private int WindDirection;
+
     private void Awake()
     {
         FiringUI = GameObject.Find("Movement UI");
@@ -155,6 +159,9 @@ public class MilitaryTankUI : MonoBehaviour
         BallUI.SetActive(false);
         GameOverUI.SetActive(false);
 
+        //WindPower = gameObject.GetComponent<WindChanger>().GenerateWindPower();
+        //WindDirection = gameObject.GetComponent<WindChanger>().GenerateWindDirection();
+        Debug.Log(WindPower);
     }
 
     private void FixedUpdate()
@@ -273,14 +280,19 @@ public class MilitaryTankUI : MonoBehaviour
         if (BallType == 4) CurrentBall = GameObject.Instantiate(SpikeBall, ShootPoint.position, TurretPivot.transform.rotation);
 
         XLevel = PowerBar.value;
-
+        
+        Debug.Log(CurrentBall.transform.rotation);
         direction = transform.right * XLevel;
 
         CurrentBall.GetComponent<Rigidbody>().AddForce(CurrentBall.transform.up * XLevel, ForceMode.Impulse);
+        //changes trajectory based on wind level
+        CurrentBall.transform.rotation = Quaternion.Euler(0.0f, 0.0f, WindDirection);
+        //adds force based on wind power
+        CurrentBall.GetComponent<Rigidbody>().AddForce(CurrentBall.transform.up * WindPower, ForceMode.Impulse);
         TeleportButton.GetComponent<Button>().interactable = false;
         TeleportWarning.SetActive(true);
         CameraTarget.GetComponent<BallChaser>().Follow(CurrentBall);
-
+       
         //Hide the movement UI and show Ball UI
         FiringUI.SetActive(false);
         BallUI.SetActive(true);
@@ -355,6 +367,10 @@ public class MilitaryTankUI : MonoBehaviour
         //allows player to aim again.
         FiringUI.SetActive(true);
         BallUI.SetActive(false);
+
+        //gets new wind power and direction
+        //WindPower = gameObject.GetComponent<WindChanger>().GenerateWindPower();
+        //WindDirection = gameObject.GetComponent<WindChanger>().GenerateWindDirection();
     }
 
     IEnumerator ScreenShake()
@@ -403,14 +419,16 @@ public class MilitaryTankUI : MonoBehaviour
         FiringUI.SetActive(true);
         BallUI.SetActive(false);
 
-
+        //gets new wind power and direction
+        //WindPower = gameObject.GetComponent<WindChanger>().GenerateWindPower();
+        //WindDirection = gameObject.GetComponent<WindChanger>().GenerateWindDirection();
     }
 
     public void MoveLeft()
     {
         if (FuelLevel > 0)
         {
-            movement = new Vector3(-1f, 0f, 0f);
+            movement = new Vector3(-3f, 0f, 0f);
         }
 
     }
@@ -419,7 +437,7 @@ public class MilitaryTankUI : MonoBehaviour
     {
         if (FuelLevel > 0)
         {
-            movement = new Vector3(1f, 0f, 0f);
+            movement = new Vector3(3f, 0f, 0f);
         }
 
     }

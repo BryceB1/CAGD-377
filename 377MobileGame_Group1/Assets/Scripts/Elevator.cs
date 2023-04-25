@@ -43,16 +43,8 @@ public class Elevator : MonoBehaviour
                 if (u >= 1)
                 {
                     u = 1;
-                    if (Tank.GetComponent<TankUI>())
-                    {
-                        Tank.GetComponent<TankUI>().ToggleFiringUI();
-                        Tank.GetComponent<TankUI>().ToggleFiringUI();
-                    }
-                    else
-                    {
-                        Tank.GetComponent<MilitaryTankUI>().ToggleFiringUI();
-                        Tank.GetComponent<MilitaryTankUI>().ToggleFiringUI();
-                    }
+                    Tank.GetComponent<TankUI>().ToggleFiringUI();
+                    Tank.GetComponent<TankUI>().ToggleFiringUI();
                     MovingUp = false;
                     Floor = 2;
                     Door.transform.position += new Vector3(0f, 0f, 1f);
@@ -75,18 +67,10 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball" && Interactable)
+        if (other.gameObject.tag == "Ball" && Interactable) 
         {
             ElevatorMove(UP, Floor);
-            if (Tank.GetComponent<TankUI>())
-            {
-                Tank.GetComponent<TankUI>().NoEffect();
-            }
-            else
-            {
-                Tank.GetComponent<MilitaryTankUI>().NoEffect();
-            }
-
+            Tank.GetComponent<TankUI>().NoEffect();
         }
     }
 

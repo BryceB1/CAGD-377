@@ -39,7 +39,7 @@ public class OutofBounds : MonoBehaviour
             }
             else
             {
-                Tank.GetComponent<MilitaryTankUI>().NoEffect();
+                Tank.GetComponent<MilitaryTankUI>().StopMovement();
             }
         }
     }

@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406029637}
   - component: {fileID: 406029636}
+  - component: {fileID: 406029638}
   m_Layer: 0
   m_Name: Mr.AllData
   m_TagString: Untagged
@@ -238,6 +239,11 @@ MonoBehaviour:
   Level1HiScore: 0
   Level2HiScore: 0
   Level3HiScore: 0
+  Level4HiScore: 0
+  BLevel1HiScore: 0
+  BLevel2HiScore: 0
+  BLevel3HiScore: 0
+  BLevel4HiScore: 0
   Level1Star1: 0
   Level1Star2: 0
   Level1Star3: 0
@@ -250,6 +256,26 @@ MonoBehaviour:
   Level3Star2: 0
   Level3Star3: 0
   Level3Star4: 0
+  Level4Star1: 0
+  Level4Star2: 0
+  Level4Star3: 0
+  Level4Star4: 0
+  BLevel1Star1: 0
+  BLevel1Star2: 0
+  BLevel1Star3: 0
+  BLevel1Star4: 0
+  BLevel2Star1: 0
+  BLevel2Star2: 0
+  BLevel2Star3: 0
+  BLevel2Star4: 0
+  BLevel3Star1: 0
+  BLevel3Star2: 0
+  BLevel3Star3: 0
+  BLevel3Star4: 0
+  BLevel4Star1: 0
+  BLevel4Star2: 0
+  BLevel4Star3: 0
+  BLevel4Star4: 0
   LevelDatas: []
 --- !u!4 &406029637
 Transform:
@@ -265,6 +291,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &406029638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406029635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da4c4d76eca48b4587b2b15f77a9255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Main Title Music
+    Audio: {fileID: 0}
+    volume: 0
+    pitch: 0.1
+    Source: {fileID: 0}
 --- !u!1 &677267799
 GameObject:
   m_ObjectHideFlags: 0
