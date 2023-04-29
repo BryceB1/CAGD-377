@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -35931,7 +35931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3534a653106644b8ac23c99f6b1104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 0
+  SceneNum: 5
   PowerBar: {fileID: 659643185}
   PowerText: {fileID: 1463858027}
   GolfBall: {fileID: 2414446482693500962, guid: 6380cab3f0ceca043ab4512f6d8c7935, type: 3}

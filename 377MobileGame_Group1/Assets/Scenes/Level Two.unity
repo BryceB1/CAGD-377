@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3534a653106644b8ac23c99f6b1104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 3
+  SceneNum: 4
   PowerBar: {fileID: 1650529852}
   PowerText: {fileID: 2102719747}
   GolfBall: {fileID: 2414446482693500962, guid: 6380cab3f0ceca043ab4512f6d8c7935, type: 3}
@@ -5646,7 +5646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   par: 30
   shots: 0
-  LevelID: 222
+  LevelID: 2
   LevelName: Office Building
   HighScore: 0
   StarScore1: 10000
