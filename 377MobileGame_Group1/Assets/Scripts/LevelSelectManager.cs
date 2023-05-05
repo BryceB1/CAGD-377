@@ -8,11 +8,11 @@ public class LevelSelectManager : MonoBehaviour
 {
     public int Level1Highscore, Level2Highscore, Level3Highscore, Level4Highscore;
 
-    public int BLevel1Highscore, BLevel2Highscore, BLevel3Highscore, BLevel4Highscore;
+    public int BLevel1Highscore, BLevel2Highscore, BLevel3Highscore, BLevel4Highscore,BLevel5Highscore,BLevel6Highscore;
 
     public Text Level1Score, Level2Score, Level3Score, Level4Score;
 
-    public Text BLevel1Score, BLevel2Score, BLevel3Score, BLevel4Score;
+    public Text BLevel1Score, BLevel2Score, BLevel3Score, BLevel4Score, BLevel5Score, BLevel6Score;
 
     //public LevelObject Object1, Object2, Object3;
 
@@ -23,7 +23,7 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField]
     private GameObject BLevel1Star1, BLevel1Star2, BLevel1Star3, BLevel1Star4, BLevel2Star1, BLevel2Star2, BLevel2Star3, BLevel2Star4, BLevel3Star1, BLevel3Star2, BLevel3Star3, BLevel3Star4;
     [SerializeField]
-    private GameObject BLevel4Star1, BLevel4Star2, BLevel4Star3, BLevel4Star4;
+    private GameObject BLevel4Star1, BLevel4Star2, BLevel4Star3, BLevel4Star4, BLevel5Star1, BLevel5Star2, BLevel5Star3, BLevel5Star4, BLevel6Star1, BLevel6Star2, BLevel6Star3, BLevel6Star4;
     [SerializeField]
     private Button Level1Button, Level2Button, Level3Button, Level4Button, Level5Button, Level6Button;
     [SerializeField]
@@ -55,6 +55,8 @@ public class LevelSelectManager : MonoBehaviour
         BLevel2Highscore = HeadManager.Instance.BLevel2HiScore;
         BLevel3Highscore = HeadManager.Instance.BLevel3HiScore;
         BLevel4Highscore = HeadManager.Instance.BLevel4HiScore;
+        BLevel5Highscore = HeadManager.Instance.BLevel5HiScore;
+        BLevel6Highscore = HeadManager.Instance.BLevel6HiScore;
 
         BLevel1Score.text = "Highscore: " + BLevel1Highscore;
         BLevel2Score.text = "Highscore: " + BLevel2Highscore;
@@ -153,6 +155,8 @@ public class LevelSelectManager : MonoBehaviour
         }
 
 
+
+
         if (BLevel1Highscore >= HeadManager.Instance.BLevel1Star1 && BLevel1Highscore != 0)
         {
             BLevel1Star1.SetActive(true);
@@ -238,6 +242,47 @@ public class LevelSelectManager : MonoBehaviour
             Stars++;
         }
 
+        if (BLevel5Highscore >= HeadManager.Instance.BLevel5Star1 && BLevel5Highscore != 0)
+        {
+            BLevel5Star1.SetActive(true);
+            Stars++;
+        }
+        if (BLevel5Highscore >= HeadManager.Instance.BLevel5Star2 && BLevel5Highscore != 0)
+        {
+            BLevel5Star2.SetActive(true);
+            Stars++;
+        }
+        if (BLevel5Highscore >= HeadManager.Instance.BLevel5Star3 && BLevel5Highscore != 0)
+        {
+            BLevel5Star3.SetActive(true);
+            Stars++;
+        }
+        if (BLevel5Highscore >= HeadManager.Instance.BLevel5Star4 && BLevel5Highscore != 0)
+        {
+            BLevel5Star4.SetActive(true);
+            Stars++;
+        }
+
+        if (BLevel6Highscore >= HeadManager.Instance.BLevel6Star1 && BLevel6Highscore != 0)
+        {
+            BLevel6Star1.SetActive(true);
+            Stars++;
+        }
+        if (BLevel6Highscore >= HeadManager.Instance.BLevel6Star2 && BLevel6Highscore != 0)
+        {
+            BLevel6Star2.SetActive(true);
+            Stars++;
+        }
+        if (BLevel6Highscore >= HeadManager.Instance.BLevel6Star3 && BLevel6Highscore != 0)
+        {
+            BLevel6Star3.SetActive(true);
+            Stars++;
+        }
+        if (BLevel6Highscore >= HeadManager.Instance.BLevel6Star4 && BLevel6Highscore != 0)
+        {
+            BLevel6Star4.SetActive(true);
+            Stars++;
+        }
 
 
         StarCounter.text = "Current Stars: " + Stars;

@@ -14126,7 +14126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3534a653106644b8ac23c99f6b1104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 7
+  SceneNum: 8
   PowerBar: {fileID: 490984017}
   PowerText: {fileID: 1547627622}
   GolfBall: {fileID: 2414446482693500962, guid: 6380cab3f0ceca043ab4512f6d8c7935, type: 3}
@@ -14149,6 +14149,7 @@ MonoBehaviour:
   FuelGauge: {fileID: 1678215698}
   levelData: {fileID: 1090323821}
   LevelName: 
+  TankBody: {fileID: 0}
 --- !u!4 &1040742210
 Transform:
   m_ObjectHideFlags: 0

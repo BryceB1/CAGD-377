@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartUp.unity
     guid: bbd666da494d615419c5ec52b46f3d26
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 8b00e3af30b323d4296c6d9223e91818
+  - enabled: 1
     path: Assets/Scenes/Level Select.unity
     guid: 93e16527b6e2ddb46a3ea051a9eafd8f
   - enabled: 1
@@ -35,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelX-3.unity
     guid: 3feab64105a57954e9f2b95d4b5720c7
+  - enabled: 1
+    path: Assets/Scenes/LevelX-4.unity
+    guid: f1b831624dab9044fbdad23ec47e1009
+  - enabled: 1
+    path: Assets/Scenes/LevelX-5.unity
+    guid: c8dec1644b137514da5eda6a33f08043
   - enabled: 0
     path: Assets/Scenes/MobileGame.unity
     guid: 85bb90e1c44b7e24c8d35c42ad0a8710

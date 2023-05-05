@@ -118,6 +118,8 @@ public class MilitaryTankUI : MonoBehaviour
     private int WindPower;
 
     private int WindDirection;
+    [SerializeField]
+    private GameObject TankBody;
 
     private void Awake()
     {
@@ -125,6 +127,11 @@ public class MilitaryTankUI : MonoBehaviour
         BallUI = GameObject.Find("BallUI");
         GameOverUI = GameObject.Find("GameOverUI");
         LevelName = levelData.GetComponent<LevelData>().LevelName;
+        TankBody = GameObject.Find("Main_Body");
+        if (GameObject.Find("Mr.AllData"))
+        {
+            HeadManager.Instance.gameObject.GetComponent<CustomizedTankManager>().ColorTank(TankBody);
+        }
     }
 
     // Start is called before the first frame update
@@ -161,7 +168,7 @@ public class MilitaryTankUI : MonoBehaviour
 
         //WindPower = gameObject.GetComponent<WindChanger>().GenerateWindPower();
         //WindDirection = gameObject.GetComponent<WindChanger>().GenerateWindDirection();
-        Debug.Log(WindPower);
+        //Debug.Log(WindPower);
     }
 
     private void FixedUpdate()
@@ -171,7 +178,7 @@ public class MilitaryTankUI : MonoBehaviour
         if (movement.x > 0 || movement.x < 0)
         {
             Tank.transform.position += (movement * Time.deltaTime * movementSpeed);
-            FuelLevel--;
+            FuelLevel -= 5;
             FuelTank.text = "Fuel: " + FuelLevel;
             float FuelPercent = (FuelLevel / FuelMax);
             FuelGauge.size = FuelPercent;
@@ -235,7 +242,7 @@ public class MilitaryTankUI : MonoBehaviour
 
     public void LevelSelect()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void TurretLeft()
@@ -281,7 +288,7 @@ public class MilitaryTankUI : MonoBehaviour
 
         XLevel = PowerBar.value;
         
-        Debug.Log(CurrentBall.transform.rotation);
+        //Debug.Log(CurrentBall.transform.rotation);
         direction = transform.right * XLevel;
 
         CurrentBall.GetComponent<Rigidbody>().AddForce(CurrentBall.transform.up * XLevel, ForceMode.Impulse);
@@ -428,7 +435,7 @@ public class MilitaryTankUI : MonoBehaviour
     {
         if (FuelLevel > 0)
         {
-            movement = new Vector3(-3f, 0f, 0f);
+            movement = new Vector3(-5f, 0f, 0f);
         }
 
     }
@@ -437,7 +444,7 @@ public class MilitaryTankUI : MonoBehaviour
     {
         if (FuelLevel > 0)
         {
-            movement = new Vector3(3f, 0f, 0f);
+            movement = new Vector3(5f, 0f, 0f);
         }
 
     }

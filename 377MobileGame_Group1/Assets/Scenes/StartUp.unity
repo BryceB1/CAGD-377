@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 406029637}
   - component: {fileID: 406029636}
   - component: {fileID: 406029638}
+  - component: {fileID: 406029639}
   m_Layer: 0
   m_Name: Mr.AllData
   m_TagString: Untagged
@@ -244,6 +245,8 @@ MonoBehaviour:
   BLevel2HiScore: 0
   BLevel3HiScore: 0
   BLevel4HiScore: 0
+  BLevel5HiScore: 0
+  BLevel6HiScore: 0
   Level1Star1: 0
   Level1Star2: 0
   Level1Star3: 0
@@ -276,6 +279,14 @@ MonoBehaviour:
   BLevel4Star2: 0
   BLevel4Star3: 0
   BLevel4Star4: 0
+  BLevel5Star1: 0
+  BLevel5Star2: 0
+  BLevel5Star3: 0
+  BLevel5Star4: 0
+  BLevel6Star1: 0
+  BLevel6Star2: 0
+  BLevel6Star3: 0
+  BLevel6Star4: 0
   LevelDatas: []
 --- !u!4 &406029637
 Transform:
@@ -306,9 +317,25 @@ MonoBehaviour:
   Sounds:
   - Name: Main Title Music
     Audio: {fileID: 0}
-    volume: 0
+    volume: 0.75
     pitch: 0.1
     Source: {fileID: 0}
+--- !u!114 &406029639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406029635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b993b2dee685a4d8245eecd8218b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Green: {fileID: 2100000, guid: 450d4d9a7bf654e44a2842ede7dabfb1, type: 2}
+  Red: {fileID: 2100000, guid: 7f72292720ad5e646b64af55c7b4719b, type: 2}
+  Blue: {fileID: 2100000, guid: d8560500d96f63449835af5885c4b7ec, type: 2}
+  CurrentColor: {fileID: 2100000, guid: 450d4d9a7bf654e44a2842ede7dabfb1, type: 2}
 --- !u!1 &677267799
 GameObject:
   m_ObjectHideFlags: 0

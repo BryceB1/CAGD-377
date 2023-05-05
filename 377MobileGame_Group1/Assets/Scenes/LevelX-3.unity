@@ -22000,7 +22000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 139270102012020054, guid: 88a18cc95b1913643abd5a6033f4369e, type: 3}
       propertyPath: force
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a18cc95b1913643abd5a6033f4369e, type: 3}
@@ -28742,7 +28742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3534a653106644b8ac23c99f6b1104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 8
+  SceneNum: 9
   PowerBar: {fileID: 1352721926}
   PowerText: {fileID: 920895501}
   GolfBall: {fileID: 2414446482693500962, guid: 6380cab3f0ceca043ab4512f6d8c7935, type: 3}
@@ -28765,6 +28765,7 @@ MonoBehaviour:
   FuelGauge: {fileID: 1423085821}
   levelData: {fileID: 1139232795}
   LevelName: 
+  TankBody: {fileID: 0}
 --- !u!4 &1458332868
 Transform:
   m_ObjectHideFlags: 0
@@ -30337,7 +30338,7 @@ GameObject:
   - component: {fileID: 1544148023}
   - component: {fileID: 1544148022}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -263,6 +263,7 @@ RectTransform:
   - {fileID: 1913638953}
   - {fileID: 594340561}
   - {fileID: 1537090276}
+  - {fileID: 1364141726}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6302,6 +6303,8 @@ MonoBehaviour:
   FuelTank: {fileID: 2094156915}
   FuelGauge: {fileID: 286184599}
   levelData: {fileID: 1967802763}
+  LevelName: 
+  MainCamera: {fileID: 0}
 --- !u!4 &1037371492
 Transform:
   m_ObjectHideFlags: 0
@@ -8191,6 +8194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTarget: {fileID: 1526155608}
+  Nudging: 0
 --- !u!81 &1300789952
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8387,6 +8391,98 @@ Transform:
   m_Father: {fileID: 20031423}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1364141725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364141726}
+  - component: {fileID: 1364141729}
+  - component: {fileID: 1364141728}
+  - component: {fileID: 1364141727}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1364141726
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364141725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 20031423}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1364141727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364141725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e78cb0791c6364ba86ae431b8f7809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1364141728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364141725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1364141729
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364141725}
+  m_CullTransparentMesh: 1
 --- !u!1 &1373318836
 GameObject:
   m_ObjectHideFlags: 0
@@ -9327,11 +9423,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tank: {fileID: 1037371490}
   LevelPreview: 0
+  FollowingBall: 0
   HolePoint: {fileID: 749736851}
   TankPoint: {fileID: 1037371490}
   Buffer1: {fileID: 2008020318}
   Buffer2: {fileID: 1616413077}
   timeDuration: 5
+  LevelTitle: {fileID: 1364141728}
 --- !u!4 &1526155610
 Transform:
   m_ObjectHideFlags: 0
@@ -11440,7 +11538,7 @@ MonoBehaviour:
   par: 300
   shots: 0
   LevelID: 9999
-  LevelName: Congrats
+  LevelName: Credits
   HighScore: 0
   StarScore1: 3000
   StarScore2: 4000

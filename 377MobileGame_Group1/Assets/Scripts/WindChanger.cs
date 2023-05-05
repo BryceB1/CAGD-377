@@ -12,18 +12,28 @@ public class WindChanger : MonoBehaviour
     private Text WindMPH;
     [SerializeField]
     private RawImage Arrow;
+    [SerializeField]
+    private bool Enabled;
     public int GenerateWindDirection()
     {
-        wind = Random.Range(-90, 91);
-        WindLevel.text = "Wind Level: " + wind;
-        Arrow.rectTransform.rotation = Quaternion.Euler(0, 0, wind);
-        return wind;
+        if (Enabled)
+        {
+            wind = Random.Range(-90, 91);
+            WindLevel.text = "Wind Level: " + wind;
+            Arrow.rectTransform.rotation = Quaternion.Euler(0, 0, wind);
+            return wind;
+        }
+        return 0;
     }
 
     public int GenerateWindPower()
     {
-        wind = Random.Range(15, 36);
-        WindMPH.text = "MPH: " + wind;
-        return wind;
+        if (Enabled)
+        {
+            wind = Random.Range(15, 36);
+            WindMPH.text = "MPH: " + wind;
+            return wind;
+        }
+        return 0;
     }
 }
