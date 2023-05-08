@@ -33,7 +33,7 @@ public class BallSettings : MonoBehaviour
         if (NormalBall)
         {
             CurrentBall = "Normal";
-            Tank.GetComponent<TankUI>().BallTypeSet(1);
+            Tank.GetComponent<MilitaryTankUI>().BallTypeSet(1);
             NormalButton.SetActive(true);
             if (!SwitchableBallType)
             {
@@ -42,7 +42,7 @@ public class BallSettings : MonoBehaviour
         }
         else if (PlatformBall)
         {
-            Tank.GetComponent<TankUI>().BallTypeSet(2);
+            Tank.GetComponent<MilitaryTankUI>().BallTypeSet(2);
             CurrentBall = "Platform";
             PlatformButton.SetActive(true);
             NormalButton.SetActive(false);
@@ -54,7 +54,7 @@ public class BallSettings : MonoBehaviour
         }
         else if (WallBall)
         {
-            Tank.GetComponent<TankUI>().BallTypeSet(3);
+            Tank.GetComponent<MilitaryTankUI>().BallTypeSet(3);
             CurrentBall = "Wall";
             WallButton.SetActive(true);
             NormalButton.SetActive(false);
@@ -66,7 +66,7 @@ public class BallSettings : MonoBehaviour
         }
         else if (SpikyBall)
         {
-            Tank.GetComponent<TankUI>().BallTypeSet(4);
+            Tank.GetComponent<MilitaryTankUI>().BallTypeSet(4);
             CurrentBall = "Spiky";
             SpikyButton.SetActive(true);
             NormalButton.SetActive(false);
@@ -84,21 +84,21 @@ public class BallSettings : MonoBehaviour
         {
             if (PlatformBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(2);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(2);
                 CurrentBall = "Platform";
                 NormalButton.SetActive(false);
                 PlatformButton.SetActive(true);
             }
             else if (WallBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(3);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(3);
                 CurrentBall = "Wall";
                 NormalButton.SetActive(false);
                 WallButton.SetActive(true);
             }
             else if (SpikyBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(4);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(4);
                 CurrentBall = "Spiky";
                 NormalButton.SetActive(false);
                 SpikyButton.SetActive(true);
@@ -108,21 +108,21 @@ public class BallSettings : MonoBehaviour
         {
             if (WallBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(3);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(3);
                 CurrentBall = "Wall";
                 PlatformButton.SetActive(false);
                 WallButton.SetActive(true);
             }
             else if (SpikyBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(4);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(4);
                 CurrentBall = "Spiky";
                 PlatformButton.SetActive(false);
                 SpikyButton.SetActive(true);
             }
             else if (NormalBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(1);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(1);
                 CurrentBall = "Normal";
                 PlatformButton.SetActive(false);
                 NormalButton.SetActive(true);
@@ -132,21 +132,21 @@ public class BallSettings : MonoBehaviour
         {
             if (SpikyBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(4);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(4);
                 CurrentBall = "Spiky";
                 WallButton.SetActive(false);
                 SpikyButton.SetActive(true);
             }
             else if (NormalBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(1);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(1);
                 CurrentBall = "Normal";
                 WallButton.SetActive(false);
                 NormalButton.SetActive(true);
             }
             else if (PlatformBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(2);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(2);
                 CurrentBall = "Platform";
                 WallButton.SetActive(false);
                 PlatformButton.SetActive(true);
@@ -156,21 +156,21 @@ public class BallSettings : MonoBehaviour
         {
             if (NormalBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(1);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(1);
                 CurrentBall = "Normal";
                 SpikyButton.SetActive(false);
                 NormalButton.SetActive(true);
             }
             else if (PlatformBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(2);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(2);
                 CurrentBall = "Platform";
                 SpikyButton.SetActive(false);
                 PlatformButton.SetActive(true);
             }
             else if (WallBall)
             {
-                Tank.GetComponent<TankUI>().BallTypeSet(3);
+                Tank.GetComponent<MilitaryTankUI>().BallTypeSet(3);
                 CurrentBall = "Wall";
                 SpikyButton.SetActive(false);
                 WallButton.SetActive(true);

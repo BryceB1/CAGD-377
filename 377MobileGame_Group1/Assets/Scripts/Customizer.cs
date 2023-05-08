@@ -67,8 +67,8 @@ public class Customizer : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void StartGame()
+    public void CreditsButton()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(12);
     }
 }

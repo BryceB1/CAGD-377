@@ -356,7 +356,14 @@ public class MilitaryTankUI : MonoBehaviour
     public void Explode() //explodes ball and uses current effect
     {
         //detonates the ball
-        if (BallType == 1 || BallType == 0) Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
+        if (BallType == 1 || BallType == 0)
+        {
+            Instantiate(Explosion, CurrentBall.transform.position, CurrentBall.transform.rotation);
+            if (HeadManager.Instance != null)
+            {
+                HeadManager.Instance.gameObject.GetComponent<AudioManager>().PlaySound("bomb");
+            }
+        }
         //spawns platform
         if (BallType == 2) Instantiate(Platform, CurrentBall.transform.position, Tank.transform.rotation);
         //spawns wall

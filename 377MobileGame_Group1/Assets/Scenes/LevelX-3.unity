@@ -3273,9 +3273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: HideControls
+      - m_Target: {fileID: 1458332867}
+        m_TargetAssemblyTypeName: MilitaryTankUI, Assembly-CSharp
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3285,9 +3285,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TankUI, Assembly-CSharp
-        m_MethodName: PauseGame
+      - m_Target: {fileID: 1772772671}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: HideControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6265,7 +6265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '>'
+  m_Text: 
 --- !u!222 &328984577
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6424,7 +6424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aim Right
+  m_Text: 
 --- !u!222 &350628752
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10824,7 +10824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d27a889ddc0c844da4662f3d16b3338, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04d111b292751ef4fb001198d4f1a5e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18901,7 +18901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b40bd26c94d7deb448e28e1f343d8dc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bae72354fa0988043b99b5fc551ab597, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20207,7 +20207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1772772671}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: ShowControls2
         m_Mode: 1
@@ -20776,8 +20776,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7e49e6b97b411c94da9ad7ebc1182fcf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -29820,8 +29820,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2bf4e1655dc03f8488206bb5d4fb4ff0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -33935,7 +33935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aim Left
+  m_Text: 
 --- !u!222 &1754361772
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34102,7 +34102,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1772772671}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: DisplayControls
         m_Mode: 1
@@ -34134,7 +34134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b40bd26c94d7deb448e28e1f343d8dc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7e8d315faf14d240b69db3d744993ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34529,10 +34529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f995dcdafff346b429d416d06294fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controls1: {fileID: 749795532}
-  Controls2: {fileID: 2121666283}
+  Controls1: {fileID: 1887286898}
+  Controls2: {fileID: 181087274}
   Controls3: {fileID: 0}
-  ControlButtons: {fileID: 792304146}
+  ControlButtons: {fileID: 1473915043}
 --- !u!4 &1772772672
 Transform:
   m_ObjectHideFlags: 0
@@ -34845,7 +34845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <
+  m_Text: 
 --- !u!222 &1778779572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35321,8 +35321,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a55c0b0ddcdb4924d93b4cc77b4ee7e6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -38203,8 +38203,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ba31a14957054494f85caac9327284b8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -41322,7 +41322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b40bd26c94d7deb448e28e1f343d8dc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bae72354fa0988043b99b5fc551ab597, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -41505,7 +41505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIRE
+  m_Text: 
 --- !u!222 &2144136744
 CanvasRenderer:
   m_ObjectHideFlags: 0
