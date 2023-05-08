@@ -178,7 +178,7 @@ public class MilitaryTankUI : MonoBehaviour
         if (movement.x > 0 || movement.x < 0)
         {
             Tank.transform.position += (movement * Time.deltaTime * movementSpeed);
-            FuelLevel -= 5;
+            FuelLevel -= 2;
             FuelTank.text = "Fuel: " + FuelLevel;
             float FuelPercent = (FuelLevel / FuelMax);
             FuelGauge.size = FuelPercent;
@@ -443,6 +443,10 @@ public class MilitaryTankUI : MonoBehaviour
         if (FuelLevel > 0)
         {
             movement = new Vector3(-5f, 0f, 0f);
+            if (HeadManager.Instance != null)
+            {
+                HeadManager.Instance.gameObject.GetComponent<AudioManager>().PlaySound("TreadSound");
+            }
         }
 
     }
@@ -452,6 +456,10 @@ public class MilitaryTankUI : MonoBehaviour
         if (FuelLevel > 0)
         {
             movement = new Vector3(5f, 0f, 0f);
+            if (HeadManager.Instance != null)
+            {
+                HeadManager.Instance.gameObject.GetComponent<AudioManager>().PlaySound("TreadSound");
+            }
         }
 
     }
@@ -459,6 +467,10 @@ public class MilitaryTankUI : MonoBehaviour
     public void StopMovement()
     {
         movement = new Vector3(0f, 0f, 0f);
+        if (HeadManager.Instance != null)
+        {
+            HeadManager.Instance.gameObject.GetComponent<AudioManager>().StopSound("TreadSound");
+        }
     }
 
     public void ToggleFiringUI()

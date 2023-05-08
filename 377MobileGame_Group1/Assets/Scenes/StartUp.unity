@@ -320,6 +320,11 @@ MonoBehaviour:
     volume: 0.75
     pitch: 0.1
     Source: {fileID: 0}
+  - Name: TreadSound
+    Audio: {fileID: 8300000, guid: e43028b4bbbab004e89003cfd67facd3, type: 3}
+    volume: 0.75
+    pitch: 0.1
+    Source: {fileID: 0}
 --- !u!114 &406029639
 MonoBehaviour:
   m_ObjectHideFlags: 0
