@@ -12,11 +12,11 @@ public class Conveyor : MonoBehaviour
     {
         if (directional && Ball != null)
         {
-            Ball.transform.position += new Vector3(0.01f, 0, 0);
+            Ball.transform.position += new Vector3(1f, 0, 0);
         }
         else if (!directional && Ball != null)
         {
-            Ball.transform.position += new Vector3(-0.01f, 0, 0);
+            Ball.transform.position += new Vector3(-1f, 0, 0);
         }
     }
 
