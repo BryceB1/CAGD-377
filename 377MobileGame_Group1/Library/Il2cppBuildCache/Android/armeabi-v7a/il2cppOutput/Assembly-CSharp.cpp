@@ -10120,7 +10120,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conveyor_Update_m81EFE3679AC1BAAB4791907
 		}
 	}
 	{
-		// Ball.transform.position += new Vector3(0.01f, 0, 0);
+		// Ball.transform.position += new Vector3(1f, 0, 0);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_3 = __this->get_Ball_4();
 		NullCheck(L_3);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_4;
@@ -10131,7 +10131,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conveyor_Update_m81EFE3679AC1BAAB4791907
 		L_6 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_5, /*hidden argument*/NULL);
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_7;
 		memset((&L_7), 0, sizeof(L_7));
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_7), (0.00999999978f), (0.0f), (0.0f), /*hidden argument*/NULL);
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_7), (1.0f), (0.0f), (0.0f), /*hidden argument*/NULL);
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_8;
 		L_8 = Vector3_op_Addition_m2E3CBC2DA8F97FF21F4F845D857746EF6BC83A01_inline(L_6, L_7, /*hidden argument*/NULL);
 		NullCheck(L_5);
@@ -10160,7 +10160,7 @@ IL_0046:
 		}
 	}
 	{
-		// Ball.transform.position += new Vector3(-0.01f, 0, 0);
+		// Ball.transform.position += new Vector3(-1f, 0, 0);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_12 = __this->get_Ball_4();
 		NullCheck(L_12);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_13;
@@ -10171,7 +10171,7 @@ IL_0046:
 		L_15 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_14, /*hidden argument*/NULL);
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_16;
 		memset((&L_16), 0, sizeof(L_16));
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_16), (-0.00999999978f), (0.0f), (0.0f), /*hidden argument*/NULL);
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_16), (-1.0f), (0.0f), (0.0f), /*hidden argument*/NULL);
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_17;
 		L_17 = Vector3_op_Addition_m2E3CBC2DA8F97FF21F4F845D857746EF6BC83A01_inline(L_15, L_16, /*hidden argument*/NULL);
 		NullCheck(L_14);
